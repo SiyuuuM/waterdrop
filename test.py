@@ -17,12 +17,11 @@ def paint(t: float):
         c = ti.Vector([-0.8, ti.cos(t) * 0.2])
         z = ti.Vector([i / n - 1, j / n - 0.5]) * 2
         iterations = 0
-        while z.norm() < 100 and iterations < 50:
+        while z.norm() < 10 and iterations < 50:
             z = complex_sqr(z) + c
             iterations += 1
         pixels[i, j] = 1 - iterations * 0.02
 
-print("1231")
 
 
 gui = ti.GUI("Julia Set", res=(n * 2, n))
